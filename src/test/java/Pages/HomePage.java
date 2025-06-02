@@ -11,7 +11,7 @@ public class HomePage extends BasePageClass {
         super(driver);
     }
 
-    @FindBy(xpath = "//*[@placeholder=\"Search for products, brands and more\"]")
+    @FindBy(xpath = "//*[@placeholder='Search for Products, Brands and More']")
     WebElement searchForProducts;
 
     @FindBy(xpath = "")

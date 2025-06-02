@@ -23,7 +23,7 @@ public class BaseTest {
     public void setUp() {
         String propertyPath = System.getProperty("user.dir") + "//src//test//resources//Env.properties";
         try {
-            driver = WebDrivers.getDriver(DriverManagerType.CHROME);
+            driver = WebDrivers.getDriver(DriverManagerType.FIREFOX);
             properties = utility.loadProperties(propertyPath);
             URL = properties.getProperty("URL");
 

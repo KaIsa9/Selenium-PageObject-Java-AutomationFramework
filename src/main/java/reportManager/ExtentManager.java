@@ -2,7 +2,7 @@ package reportManager;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentManager {
@@ -47,7 +47,7 @@ public class ExtentManager {
 
     public static ExtentReports createInstance(String reportFolderPath, String reportName) {
         if (extentReports == null) {
-            ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportFolderPath + reportName);
+            ExtentSparkReporter htmlReporter = new ExtentSparkReporter(reportFolderPath + reportName);
             htmlReporter.config().setDocumentTitle("Automation Report");
             htmlReporter.config().setReportName("Automation Reports ");
             htmlReporter.config().setTheme(Theme.STANDARD);

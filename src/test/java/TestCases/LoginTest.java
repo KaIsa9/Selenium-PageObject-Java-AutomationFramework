@@ -1,9 +1,8 @@
 package TestCases;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTestCases extends BaseTest {
+public class LoginTest extends BaseTest {
 
 
     @Test
