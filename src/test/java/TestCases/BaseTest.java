@@ -4,13 +4,14 @@ import Pages.LoginPage;
 import Pages.HomePage;
 import driverManager.DriverManagerType;
 import driverManager.WebDrivers;
+import listeners.allure.AllureTestListener;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 import util.utility;
 
 import java.util.Properties;
 
+@Listeners(AllureTestListener.class)
 public class BaseTest {
 
     protected LoginPage loginPage;
@@ -19,7 +20,7 @@ public class BaseTest {
     Properties properties;
     static String URL;
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUp() {
         String propertyPath = System.getProperty("user.dir") + "//src//test//resources//Env.properties";
         try {
@@ -36,8 +37,14 @@ public class BaseTest {
         }
     }
 
-    @AfterSuite
+    @AfterMethod
     public void destroyDriver() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
